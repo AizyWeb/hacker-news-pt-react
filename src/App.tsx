@@ -1,11 +1,9 @@
-import './App.css'
-import { lazy, Suspense } from 'react'
+import { Suspense, lazy } from 'react'
 import { Header } from './components/Header'
 import { Route } from 'wouter'
 
-const TopStories = lazy(() => import('./pages/TopStories'))
-const Detail = lazy(() => import('./pages/Detail'))
-
+const TopStoriesPage = lazy(() => import('./pages/TopStories'))
+const DetailPage = lazy(() => import('./pages/Detail'))
 
 export default function App () {
   return (
@@ -13,9 +11,9 @@ export default function App () {
       <Header />
 
       <main>
-        <Suspense fallback='Loading...'>
-          <Route path='/' component={TopStories} />
-          <Route path='/article/:id' component={Detail} />
+        <Suspense fallback={null}>
+          <Route path='/' component={TopStoriesPage} />
+          <Route path='/article/:id' component={DetailPage} />
         </Suspense>
       </main>
     </>

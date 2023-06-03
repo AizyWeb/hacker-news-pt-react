@@ -1,11 +1,12 @@
-import { header, link } from "./Header.css"
+import { header, link } from './Header.css'
 
 export const Header = () => {
-    return(
-        <nav className={header}>
-            <a href="/" className={link}>
-                Hacker News
-            </a>
-        </nav>
-    )
+  return (
+    <nav className={header}>
+      <img className='' src='/logo.gif' alt='Logo de Hacker News' />
+      <a className={link} href='/'>
+        Hacker News
+      </a>
+    </nav>
+  )
 }
